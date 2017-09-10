@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Document</title>
+</head>
+
+<style>
+   .loaded_box{
+      margin-top: 10px;
+      width: 200px;
+      height: 8px;
+      border: 1px solid lightblue;
+   }
+   .loaded{
+      width: 0%;
+      height: 8px;
+      background: lightblue;
+   }
+</style>
+<body>
+ 
+        上传文件 <input type="file" name="file"/>
+        <br />
+        <input type="submit" value="上传" name="file" onclick="return sliceUpload(obj)"/>
+        
+        <div class="loaded_box">
+            <div class="loaded"></div>
+            <span>0%</span>
+        </div>
+        
+        <br />
+        <br />
+        <br />
+        上传文件 <input type="file" name="file" id="uploadInput" />
+        <br />
+        <input type="submit" value="上传" name="file" onclick="return sliceUpload(obj1)"/>
+        
+        <div class="loaded_box">
+            <div class="loaded" id="pg_bar"></div>
+            <span id="pg_num">0%</span>
+        </div>
+</body>
+</html>
+<script>
+    // var uploadUrl = 'http://localhost/html5progress/01.php';  // 上传URL地址
+    // var uploadFileName = 'files';  
+    // var uploadInput = document.getElementsByTagName('input')[0];  // 获取上传文件的input标签
+    // var pg_bar = document.getElementsByTagName('div')[1]; // 获取进度条背景的标签元素
+    // var pg_num = document.getElementsByTagName('span')[0]; // 获取进度条数字的标签元素
+    var obj = {
+      // 上传URL地址
+      'uploadUrl' : './upload.php',
+      // 上传文件名称
+      'uploadFileName' : 'files',
+      // 获取上传文件的input标签
+      'uploadInput' : document.getElementsByTagName('input')[0],
+      // 获取进度条背景的标签元素
+      'pg_bar' : document.getElementsByTagName('div')[1],
+      // 获取进度条数字的标签元素
+      'pg_num' : document.getElementsByTagName('span')[0],
+    };
+    var obj1 = {
+      // 上传URL地址
+      'uploadUrl' : './upload.php',
+      // 上传文件名称
+      'uploadFileName' : 'files',
+      // 获取上传文件的input标签
+      'uploadInput' : document.getElementById('uploadInput'),
+      // 获取进度条背景的标签元素
+      'pg_bar' : document.getElementById('pg_bar'),
+      // 获取进度条数字的标签元素
+      'pg_num' : document.getElementById('pg_num'),
+    };
+</script>
+<script src="./html5AjaxUpload.js"></script>
